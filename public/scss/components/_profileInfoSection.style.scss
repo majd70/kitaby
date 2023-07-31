@@ -1,0 +1,329 @@
+// Start Import Files
+@use '../layout/global-rules' as *;
+
+@use '../variables/colors' as *;
+
+@use '../helpers/classes' as *;
+
+@use '../helpers/mixins' as *;
+
+.profile-content-section {
+    margin: 0;
+}
+
+// Start Account Details Section
+.account-details-box {
+    background: $white;
+    border: 0.8px solid #DFDFDF;
+    border-radius: 2px;
+    padding: 31px 101px;
+    position: relative;
+
+    @media ($max_desktop) {
+        padding: 31px;
+    }
+
+    @media ($max_phone) {
+        padding: 31px 20px;
+    }
+
+    .account-details-title {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: $light-fuchsia;
+        padding-bottom: 16px;
+    }
+
+    &:not(:last-of-type) {
+        margin-bottom: 51px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 0.8px;
+        width: 100%;
+        background-color: rgba(223, 223, 223, 0.37);
+        top: 50px;
+        left: 0;
+        top: 66px;
+    }
+}
+
+.account-details-box {
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin-bottom: 30px;
+
+        @media ($max_tablet) {
+            grid-template-columns: 1fr;
+        }
+
+        input {
+            width: 100%;
+        }
+    }
+
+    .form-btn-box {
+        display: flex;
+        justify-content: center;
+
+        .global-btn {
+            width: 100%;
+        }
+    }
+
+    .edit-account-brief {
+        margin-bottom: 30px;
+
+        label {
+            margin-bottom: 10px;
+            color: $main-color;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .account-brief-text {
+            width: 100%;
+            min-height: 150px;
+            background-color: $gray;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+            padding: 0 10px;
+            padding: 15px;
+        }
+    }
+}
+
+// End Account Details Section
+.profile-main-section {
+    position: relative;
+
+    .profile-cover-box {
+        height: 364px;
+
+        .change-cover {
+            @include centering;
+
+            width: 153px;
+            height: 42.5px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 2px;
+            font-weight: 500;
+            font-size: 12px;
+            gap: 3px;
+            color: $main-color;
+            border: none;
+            margin-right: auto;
+            position: relative;
+            top: 103%;
+
+            svg {
+                width: 15.5px;
+                height: 15px;
+            }
+        }
+
+        .profile-cover-img {
+            position: absolute;
+            width: 100%;
+            inset: 0;
+            height: 100%;
+            z-index: -2;
+            object-fit: cover;
+        }
+    }
+
+    .profile-info-box {
+        display: grid;
+        grid-template-columns: 124px 1fr;
+        gap: 22px;
+        align-items: end;
+
+        @media ($max_tablet) {
+            display: flex;
+            align-items: initial;
+            gap: 6px;
+        }
+
+        .profile-photo-box {
+            position: relative;
+
+            img {
+                width: 126px;
+                height: 126px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid $white;
+
+                @media ($max_tablet) {
+                    width: 80px;
+                    height: 80px;
+                }
+
+                @media (max-width: 450px) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    .parson-name {
+        font-weight: 500;
+        font-size: 23px;
+        line-height: 22px;
+        margin-bottom: 26px;
+        color: $white;
+
+        @media ($max_phone) {
+            margin-bottom: 23px;
+            line-height: initial;
+        }
+
+        @media (max-width: 450px) {
+            margin-bottom: 7px;
+        }
+    }
+
+    ul {
+        display: flex;
+        gap: 58px;
+        padding: 0;
+        margin: 0;
+        height: 50px;
+        align-items: end;
+
+        @media ($max_tablet) {
+            gap: 10px;
+        }
+
+        @media ($max_phone) {
+            gap: 6px;
+        }
+    }
+
+    .profile-type-link {
+        a {
+            line-height: 20px;
+            color: $main-color;
+            padding-bottom: 1rem;
+            display: block;
+            transition: all 0.2s;
+            font-size: 18px;
+
+            @media ($max_phone) {
+                font-size: 14px;
+                border-bottom: 3px solid transparent;
+            }
+
+            @media (max-width: 450px) {
+                font-size: 12px;
+            }
+        }
+
+        &:hover,
+        &.active {
+            a {
+                color: $light-fuchsia;
+                border-bottom: 3px solid $light-fuchsia;
+            }
+        }
+    }
+
+    .profile-top-section-content {
+        background: linear-gradient(180deg, transparent, 50%, #fff, 50%, #ffff);
+
+        @media ($max_tablet) {
+            height: 126px;
+            display: flex;
+            align-items: end;
+        }
+
+        @media (max-width: 450px) {
+            height: 100px;
+        }
+
+        .profile-logout {
+            @include centering;
+
+            position: absolute;
+            left: 0;
+            bottom: 19.5px;
+            width: fit-content;
+
+            svg {
+                width: 20px;
+                height: 20px;
+
+                @media ($max_phone) {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+
+            a {
+                color: $second-color;
+            }
+
+            @media ($max_phone) {
+                font-size: 12px;
+                bottom: 73px;
+                padding: 3px;
+                left: 3px;
+                border-radius: 4px;
+            }
+
+            @media (max-width: 450px) {
+                bottom: 57px;
+            }
+        }
+    }
+}
+
+.profile-info-container {
+    background: $white;
+    border: 0.8px solid #DFDFDF;
+    border-radius: 2px;
+    padding: 30px;
+    position: relative;
+    margin-bottom: 30px;
+
+    .profile-info-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: $light-fuchsia;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(223, 223, 223, 0.37);
+    }
+
+    .profile-info-text {
+        line-height: 1.8;
+        color: $main-color;
+    }
+}
+
+.change-profile-photo {
+    background: transparent;
+    border: none;
+    background-color: #f5f5f7;
+    position: absolute;
+    bottom: 4px;
+    right: 5px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    svg {
+        width: 17px;
+        height: 17px;
+    }
+}

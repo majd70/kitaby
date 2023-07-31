@@ -1,0 +1,421 @@
+// Import Style Files
+@use '../variables/colors' as *;
+
+@use '../helpers/mixins' as *;
+
+@use '../layout/global-rules' as *;
+
+
+// Start My Modal
+.mr-modal-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    z-index: 99;
+    inset: 0;
+    display: none;
+    cursor: pointer;
+
+    &.show-modal {
+        @include centering;
+    }
+
+    .modal-edit {
+        &.show-modal {
+            @include centering;
+        }
+    }
+
+    .mr-modal-box {
+        width: 840px;
+        height: 706px;
+        background: $white;
+        cursor: auto;
+        padding: 33px 56px 28px;
+
+        @media ($max_desktop) {
+            width: 95%;
+            padding: 20px 25px;
+        }
+
+        @media (max-width: 650px) {
+            height: fit-content;
+        }
+
+        .mr-modal-btn {
+            width: 352px;
+            height: 61px;
+            margin: auto;
+            margin-top: 24px;
+            background: $light-fuchsia;
+            border-radius: 2px;
+            font-weight: 400;
+            font-size: 13.9889px;
+            line-height: 17px;
+            letter-spacing: -0.32282px;
+            color: $white;
+            outline: none;
+            border: none;
+
+            @include centering;
+
+            @media ($max_phone) {
+                width: 100%;
+                margin: 0;
+                height: 48px;
+            }
+        }
+
+        .mr-modal-header {
+            position: relative;
+
+            button {
+                position: absolute;
+                left: 0;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+
+                .mr-modal-prev-svg {
+                    width: 26px;
+                    height: 25px;
+                }
+            }
+        }
+
+        .myModal-title {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+            color: $light-fuchsia;
+            margin-bottom: 42px;
+
+            @media ($max_phone) {
+                margin-bottom: 16px;
+                margin-top: 15px;
+            }
+        }
+
+        .modal-subtitle {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: $main-color;
+            margin: 37px 0 35px;
+
+            @media ($max_phone) {
+                margin: 15px 0;
+            }
+        }
+
+        .mr-modal-lines-box {
+            display: grid;
+            grid-template-columns: 364px 364px;
+            gap: 17px;
+
+            @media ($max_desktop) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .modal-line {
+                height: 9px;
+                border-radius: 7px;
+                background: rgba(163, 180, 192, 0.21);
+            }
+        }
+
+        .product-details-box {
+            display: grid;
+            gap: 18px;
+
+            @media ($max_phone) {
+                gap: 8px;
+            }
+
+            .inputs-box {
+                display: grid;
+                grid-template-columns: repeat(2, 353.5px);
+                gap: 18px;
+
+                @media ($max_desktop) {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                @media ($max_phone) {
+                    grid-template-columns: 1fr;
+                    gap: 8px;
+                }
+            }
+
+            .input-layout {
+                position: relative;
+
+                .input-layout-info {
+                    margin: 0;
+                    position: absolute;
+                    font-weight: 400;
+                    font-size: 12px;
+                    color: #A3B4C0;
+                    background-color: $white;
+                    top: 1px;
+                    width: 96%;
+                    right: 2px;
+                    padding-top: 5px;
+                    padding-right: 9px;
+
+                    @media ($max_phone) {
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            .modal-input {
+                border: 1px solid rgba(163, 180, 192, 0.34);
+                border-radius: 2px;
+                height: 62px;
+                padding-right: 18px;
+                outline: none;
+                width: 100%;
+                padding-top: 11px;
+                padding-bottom: 9px;
+
+                @media ($max_phone) {
+                    height: 48px;
+                    padding-right: 10px;
+                }
+
+                font-weight: 400;
+
+                &.textarea {
+                    width: 100%;
+                    height: 300px;
+                    padding-top: 25px;
+                    padding-bottom: 9px;
+
+                    @media ($max_phone) {
+                        height: 92px;
+                    }
+                }
+
+                &::placeholder {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: rgba(163, 180, 192, 0.62);
+                }
+            }
+
+            .input-layout {
+                .modal-input {
+                    padding-top: 25px;
+                }
+            }
+
+            .product-images-box {
+                border: 2px dashed rgba(163, 180, 192, 0.34);
+                border-radius: 2px;
+                height: 378px;
+                display: flex;
+                gap: 9.5px;
+                flex-wrap: wrap;
+                padding: 5px 3px;
+
+                div {
+                    width: 100%;
+                    height: 70px;
+                }
+
+                img {
+                    width: 100%;
+                    height: calc(100% - 100px);
+                    object-fit: cover;
+                    border-radius: 3px;
+
+                    @media (max-width: 650px) {
+                        width: 100%;
+                        height: 100%;
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+
+                .img-box {
+                    position: relative;
+                    width: fit-content;
+
+                    @media (max-width: 650px) {
+                        width: 100%;
+                        aspect-ratio: 1;
+                        height: fit-content;
+                    }
+
+                    img {
+                        &:last-of-type {
+                            width: 40px;
+                            height: 40px;
+                            position: absolute;
+                            left: calc(50% - 20px);
+                            top: calc(50% - 20px);
+                            cursor: pointer;
+
+                            @media (max-width: 650px) {
+                                left: calc(50% - 15px);
+                                top: calc(50% - 15px);
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+                    }
+                }
+
+                .upload-img-controls {
+                    .upload-label {
+                        cursor: pointer;
+                        width: 100%;
+                        height: 100%;
+                        padding: 5px;
+                        border-radius: 2.54412px;
+                        border: 1px dashed rgba(163, 180, 192, 0.34);
+
+                        @include centering;
+
+                        flex-direction: column;
+
+                        .d-and-d {
+                            font-weight: 400;
+                            font-size: 9.40158px;
+                            line-height: 11px;
+                            margin-bottom: 7px;
+                            color: rgba(163, 180, 192, 0.62);
+                        }
+
+                        .chose {
+                            font-weight: 500;
+                            font-size: 9.40158px;
+                            line-height: 11px;
+                            color: $second-color;
+                            margin-bottom: 0;
+                        }
+
+                        .max-num-of-img {
+                            font-weight: 400;
+                            font-size: 9.40158px;
+                            line-height: 11px;
+                            margin: 0;
+                            color: $main-color;
+                        }
+
+                        svg {
+                            width: 24.29px;
+                            height: 24.29px;
+                        }
+                    }
+
+                    .choose-photograph-input {
+                        display: none;
+                    }
+                }
+            }
+
+            img[src=""] {
+                visibility: collapse;
+            }
+        }
+    }
+
+    #mrAddProduct {
+        animation: modalOpen 1s;
+
+        &.hide {
+            display: none;
+        }
+
+        .mr-modal-lines-box {
+            .modal-line {
+                &:first-of-type {
+                    background: $main-color;
+                }
+            }
+        }
+    }
+
+    #mrProductImages {
+        animation: modalOpen 1s;
+
+        &.hide {
+            // animation: modalClose 1s;
+            display: none;
+        }
+
+        .modal-line {
+            background: $light-fuchsia;
+        }
+    }
+}
+
+.product-images-container {
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .img-box {
+        height: 136px;
+        border-radius: 2px;
+        position: relative;
+        margin-bottom: 8px;
+
+        .svg-box {
+            width: 39px;
+            height: 39px;
+            background: #A31E21;
+            border-radius: 2px;
+            position: absolute;
+            top: calc(50% - 19.5px);
+            left: calc(50% - 19.5px);
+
+            @include centering;
+        }
+
+        .delete-svg {
+            width: 17.87px;
+            height: 17.87px;
+        }
+
+        .product-img-mr {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}
+
+@keyframes modalClose {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+@keyframes modalOpen {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// End My Modal

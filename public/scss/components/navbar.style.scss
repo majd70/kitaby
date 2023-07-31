@@ -1,0 +1,186 @@
+@use '../variables/colors' as *;
+
+@use '../layout/global-rules' as *;
+
+@use '../helpers/mixins' as *;
+
+.nav-bar-component {
+    .container {
+        position: relative;
+    }
+
+    // background-color: transparent;
+    background-color: $main-color;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+
+    &.nav-active {
+        background-color: $main-color !important;
+    }
+
+    nav {
+        .nav-log {
+            width: 50px;
+            height: 28.6px;
+            object-fit: contain;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            &[aria-expanded^="true"] {
+                gap: 0;
+
+                &:hover {
+                    .nav-line {
+                        background-color: $light-fuchsia;
+                    }
+                }
+
+                .nav-line {
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translate3d(-5px, 10px, 10px);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(3) {
+                        transform: rotate(-45deg) translate3d(-7px, -8px, 10px);
+                    }
+                }
+            }
+
+            .nav-line {
+                display: block;
+                height: 2px;
+                width: 20px;
+                background: $white;
+                border-radius: 2px;
+                transition: all 0.3s;
+
+                @media ($min_desktop) {
+                    display: none;
+                }
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .main-list {
+            margin: auto;
+            gap: 50px;
+
+            @media ($max_desktop) {
+                gap: 40px;
+                padding-top: 25px;
+            }
+        }
+
+        .nav-item {
+            .nav-link {
+                color: $white;
+
+                &:where(.active,:hover) {
+                    color: $light-fuchsia;
+                }
+            }
+        }
+    }
+
+    .navbar-absolute {
+        display: flex;
+        flex-direction: row-reverse;
+        position: absolute;
+        left: 0;
+        top: 8px;
+        gap: 8px;
+
+        @media ($max_desktop) {
+            left: 90px;
+        }
+
+        .dropdown-menu {
+            .dropdown-item {
+                .notification-row {
+                    gap: 5px;
+
+                    .person-img {
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                        object-fit: cover;
+                    }
+
+                    .notification-info {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2px;
+
+                        p {
+                            margin: 0;
+
+                            &.notification {
+                                color: $main-color;
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+
+                            &.notification-time {
+                                font-size: 12px;
+                                font-weight: 500;
+                                color: $light-fuchsia;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bootstrap-things {
+        &.dropdown {
+            .dropdown-toggle {
+                &::after {
+                    display: none;
+                }
+            }
+
+            .dropdown-menu[data-bs-popper] {
+                right: auto;
+                left: 0;
+                width: 360px;
+            }
+        }
+
+        &.profile-icon-box {
+            @include centering;
+
+            .dropdown-toggle {
+                padding: 0;
+            }
+
+            img {
+                &.profile-icon {
+                    width: 33px;
+                    height: 33px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    border: 2px solid $white;
+                }
+            }
+
+            .dropdown-menu[data-bs-popper] {
+                width: 200px;
+            }
+        }
+    }
+}

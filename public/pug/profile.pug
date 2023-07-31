@@ -1,0 +1,164 @@
+doctype html
+html(lang="ar" dir='rtl')
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(rel='icon', type='image/x-icon', href='/assets/images/favIcon.png')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    include includes/styles.pug
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css')
+    include includes/mixins.pug
+    title الصفحة الرئيسة
+  body
+    .home-page-layout 
+      +navbar('')
+
+      main.profile.top-padding
+
+        section.profile-main-section  
+          .container-fluid
+            .profile-cover-box
+              .layout
+              img(src='../assets/images/heroBG.jpg', alt="Profile Cover Img" , class="profile-cover-img")
+              button(type="button").change-cover
+                svg 
+                  use(href="assets/images/icons/icons.svg#Camera")
+                span تعديل صورة الغلاف
+          .profile-top-section-content
+
+            .container
+              .profile-info-box
+                .profile-photo-box 
+                  img(src='../assets/images/profilePhoto.webp', alt="Profile Photo")
+                  label(for="profilePhoto").change-profile-photo 
+                    input#profilePhoto(type="file",  accept='image/*')
+                    svg 
+                      use(href="assets/images/icons/icons.svg#Camera")
+                .profile-links-box
+                  h2.parson-name محمد أشرف ريان
+                  ul
+                    li.profile-type-link
+                      a(href='../profile-info.html') بيانات الحساب
+
+        section.profile-info-section.main-padding 
+          .container 
+            .profile-info-container 
+              .profile-info-box 
+                p.profile-info-title نبذة مختصرة 
+                p.profile-info-text مرحبا بكم أنا مالك أحب القراءة ومطالعة الكتب, واتطلع لبناء المزيد من المعرفة والعلاقات وأود أن اشارككم في مناقشة المواضيع الهامة بالنسبة لي.  مرحبا بكم أنا مالك أحب القراءة ومطالعة الكتب, واتطلع لبناء المزيد من المعرفة والعلاقات وأود أن اشارككم في مناقشة المواضيع الهامة بالنسبة لي.
+
+            .profile-info-container 
+              .profile-info-box 
+                p.profile-info-title الاهتمامات 
+                p.profile-info-text أهتم بعدة مواضيع في القراءة, خصوصاََ السياسة والدين, في حين ان قرائتي لمجال علوم الأرض يقتصر على المجلات والمقالات السريعة. أهتم بعدة مواضيع في القراءة, خصوصاََ السياسة والدين, في حين ان قرائتي لمجال علوم الأرض يقتصر على المجلات والمقالات السريعة. أهتم بعدة مواضيع في القراءة, خصوصاََ السياسة والدين, في حين ان قرائتي لمجال علوم الأرض يقتصر على المجلات والمقالات السريعة.
+
+
+            .profile-info-container 
+              .profile-info-box 
+                p.profile-info-title الكتب المُنشأة 
+                .books-in-profile-box 
+                  .swiper.mySwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        .col
+                          a(href="../book-page.html").card.customized-card
+                            .card-img-box
+                              img.card-img-top(src='/assets/images/psychology2.webp', alt='art')
+                            .card-body
+                              h5.card-title كن أنتَ
+                      .swiper-slide
+                        .col
+                          a(href="../book-page.html").card.customized-card
+                            .card-img-box
+                              img.card-img-top(src='/assets/images/psychology4.webp', alt='sport')
+                            .card-body
+                              h5.card-title نظرية الفستق
+                      .swiper-slide
+                        .col
+                          a(href="../book-page.html").card.customized-card
+                            .card-img-box
+                              img.card-img-top(src='/assets/images/psychology1.webp', alt='adab')
+                            .card-body
+                              h5.card-title كيفما فكرت فكر العكس
+                      .swiper-slide
+                        .col
+                          a(href="../book-page.html").card.customized-card
+                            .card-img-box
+                              img.card-img-top(src='/assets/images/literature3.webp', alt='sport')
+                            .card-body
+                              h5.card-title وحي القلم
+                      .swiper-slide
+                        .col
+                          a(href="../book-page.html").card.customized-card
+                            .card-img-box
+                              img.card-img-top(src='/assets/images/references3.webp', alt='sport')
+                            .card-body
+                              h5.card-title نجد و الحجاز في الوثائق العثمانية
+
+                    .swiper-button-next
+                    .swiper-button-prev
+
+
+
+            .profile-info-container 
+              .profile-info-box 
+                p.profile-info-title الكتب المُنضم لها 
+                .books-in-profile-box 
+                  .swiper.mySwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        .col
+                          a(href="../book-page.html").card.customized-card
+                            .card-img-box
+                              img.card-img-top(src='/assets/images/psychology2.webp', alt='art')
+                            .card-body
+                              h5.card-title كن أنتَ
+
+                      .swiper-slide
+                        .col
+                          a(href="../book-page.html").card.customized-card
+                            .card-img-box
+                              img.card-img-top(src='/assets/images/psychology1.webp', alt='adab')
+                            .card-body
+                              h5.card-title كيفما فكرت فكر العكس
+                      .swiper-slide
+                        .col
+                          a(href="../book-page.html").card.customized-card
+                            .card-img-box
+                              img.card-img-top(src='/assets/images/literature3.webp', alt='sport')
+                            .card-body
+                              h5.card-title وحي القلم
+
+
+                    .swiper-button-next
+                    .swiper-button-prev
+
+
+    
+    include includes/footer.pug
+
+    script(src='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js')
+    include includes/script.pug
+
+    script.
+      var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 2,
+      spaceBetween: 30,
+
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      keyboard: true,
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 10,
+        },
+      },
+      });

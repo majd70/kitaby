@@ -1,0 +1,170 @@
+// Start Import Files
+
+@use '../layout/global-rules' as *;
+
+@use '../variables/colors' as *;
+
+@use '../helpers/classes' as *;
+
+@use '../helpers/mixins' as *;
+
+// Start Logs Pages
+.log-main {
+    height: 100vh;
+
+    .log-page-layout {
+        grid-template-columns: 1fr 1fr;
+
+        @media ($max_tablet) {
+            height: 100%;
+            grid-template-columns: none;
+        }
+
+        .log-bg {
+            @media ($max_tablet) {
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+            }
+
+            .log-bg-img {
+                width: 100%;
+                max-width: 100%;
+                height: calc(100vh - 70px);
+
+                @media (max-width: 1299px) {
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .log-box {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media ($max_tablet) {
+            background: #002c3e99;
+        }
+
+        .log-box-style {
+            padding: 30px;
+            background-color: $white;
+            border-radius: 5px;
+            box-shadow: 0px 1px 3px #78bcc43d;
+
+            @media ($max_phone) {
+                padding: 30px 15px;
+            }
+
+            .log-title {
+                font-weight: 600;
+                font-size: 24px;
+                color: $main-color;
+
+                @media ($max_phone) {
+                    font-size: 22px;
+                }
+            }
+
+            .log-form {
+                display: grid;
+                gap: 15px;
+                margin-top: 25px;
+
+                @media ($max_phone) {
+                    gap: 13px;
+                    margin-top: 16px;
+                }
+
+                .account-exist {
+                    .goto-account {
+                        color: $second-color;
+                        transition: all 0.3s;
+
+                        @media ($max_phone) {
+                            font-size: 14px;
+                        }
+
+                        &:hover {
+                            color: $light-fuchsia;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .log-footer {
+        position: fixed;
+        z-index: 3;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: $white;
+
+        ul {
+            @include centering;
+
+            gap: 15px;
+            height: 70px;
+            margin: 0;
+
+            a {
+                color: $second-color;
+                opacity: 0.7;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.log-box {
+    button {
+        transition: all 0.3s;
+
+        &:hover {
+            transform: scale(1.01);
+        }
+
+        &.log-btn {
+            box-shadow: 0px 1px 3px rgb(56 56 56 / 10%);
+            border-radius: 4px;
+            width: 327px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 13px;
+            justify-content: space-between;
+            padding: 0 35px;
+
+            @media ($max_phone) {
+                width: 280px;
+                padding: 0 15px;
+            }
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    .google-btn {
+        color: $main-color;
+        background: $white;
+        border: 1px solid #E0E0E0;
+    }
+
+    .facebook-btn {
+        background-color: $blue;
+        color: $white;
+        border: none;
+    }
+}
+
+// End Logs Pages

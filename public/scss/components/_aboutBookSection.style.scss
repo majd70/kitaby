@@ -1,0 +1,56 @@
+// Import Style Files
+@use '../variables/colors' as *;
+
+@use '../helpers/mixins' as *;
+
+.members-section {
+    &.about-book-section {
+        .about-book-content {
+            margin-bottom: 16px;
+
+            .about-book-text-box {
+                .about-book-subtitle {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+
+                p {
+                    line-height: 1.7;
+                }
+            }
+
+            .member-img-box {
+                a {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+
+            .member-info {
+                p {
+                    font-size: 14px;
+                }
+            }
+
+            .members-subtitle-box {
+                .members-subtitle {
+                    font-size: 14px;
+                }
+
+                .history-box {
+                    gap: 3px;
+                }
+            }
+
+            .members-img-box {
+                img {
+                    width: 20px;
+                    height: 20px;
+                    filter: invert(39%) sepia(21%) saturate(200%) saturate(109.5%) hue-rotate(174deg) brightness(94%) contrast(86%);
+                    -webkit-filter: invert(39%) sepia(21%) saturate(200%) saturate(109.5%) hue-rotate(174deg) brightness(94%) contrast(86%);
+                    margin-bottom: 3px;
+                }
+            }
+        }
+    }
+}

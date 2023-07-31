@@ -1,0 +1,25 @@
+// Start Import Files
+
+@use '../variables/colors' as *;
+
+// Start Footer
+.footer-box {
+    background-color: $main-color;
+    margin-top: 3rem;
+
+    footer {
+        .footer-logo {
+            width: 200px;
+        }
+
+        h5 {
+            color: $light-fuchsia;
+        }
+
+        .nav-link {
+            color: $white;
+        }
+    }
+}
+
+// End Footer

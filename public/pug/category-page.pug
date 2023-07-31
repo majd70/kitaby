@@ -1,0 +1,214 @@
+doctype html
+html(lang="ar" dir='rtl')
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(rel='icon', type='image/x-icon', href='/assets/images/favIcon.png')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    include includes/styles.pug
+    include includes/mixins.pug
+    title التصنيفات
+  body
+    .home-page-layout 
+      // Start main section 
+      +navbar('')
+
+
+      +pageBackgroundSection('اسم التصنيف','technology.webp')
+      main
+        section.global-section 
+          .container
+            .global-section-layout
+              button(type="button" ,class="add-new-product-btn global-btn-box create-group-btn" id="openMrModal")
+                span إنشاء كتاب
+                svg 
+                  use(href='../assets/images/icons/icons.svg#plus')
+
+              .mr-modal-container#modalContainer
+                .mr-modal-box
+                  #mrAddProduct
+                    .mr-modal-header 
+                      button(type="button" ,class="close-btn" id="closeModal")
+                        svg.mr-modal-prev-svg 
+                          use(href="../assets/images/icons/icons.svg#mrModalPrev")
+                      h2.myModal-title إنشاء كتاب
+                    .mr-modal-lines-box
+                      .modal-line
+                      .modal-line
+                    h3.modal-subtitle بيانات الكتاب
+                    from.product-details-box 
+                      .inputs-box
+                        input.modal-input(type="text",placeholder="اسم الكتاب")
+
+                      textarea.modal-input.textarea(name="", cols="30", rows="10" placeholder="وصف الكتاب")
+                      button(type="button" class="mr-modal-btn" id="mrModalNext") التالي
+            
+              
+                  #mrProductImages.hide
+                    .mr-modal-header 
+                      button(type="button" ,class="close-btn" id="prevModal")
+                        svg.mr-modal-prev-svg 
+                          use(href="../assets/images/icons/icons.svg#mrModalPrev")
+                      h2.myModal-title إنشاء كتاب
+                    .mr-modal-lines-box
+                      .modal-line
+                      .modal-line
+                    h3.modal-subtitle صورة الكتاب
+                    from.product-details-box 
+                      .product-images-box#imagesBox
+                        .upload-img-controls#uploadImgControls
+                          label(for="uploadImg", class='upload-label')
+                            svg 
+                              use(href='../assets/images/icons/icons.svg#uploadCloud')
+                            p.d-and-d أسحب وأفلت صور المنتج هنا
+                            p.chose تصفح الملفات
+                          input#uploadImg(type='file' accept='image/*' onchange='readURL(this)' class="choose-photograph-input")
+                        img(src="", alt="No Img" id="img" , class='cover-view')
+                      button(type="button" class="mr-modal-btn" id="pushBook") إنشاء
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              .card.mb-3.category-page-card
+                .row.g-0
+                  .col-md-4
+                    img.img-fluid.rounded-start(src='/assets/images/technology.webp', alt='Book Image')
+                  .col-md-8
+                    .card-body
+                      h5.card-title تاريخ موجز للزمن
+                      p.card-text
+                        | هذا النص هو مثال لنص يمـــــــكن أن يستبــــــــدل في نفـــــس المساحة، لقد تم توليد هذا النص من مولد النــــــــص العــربى، حيث يمكنك أن تولد مثل هــذا النـــص أو العديد من النصوص الأخرى.هذا النص هو مثال لنص يمكن أن يستبدل في نــفس المساحة، لقد تم توليد هذا النص من مولد النص الــــــــعربى، حيث يمكنك أن تولد مثل هذا النص.
+                      p.card-text
+                        small.text-muted أخر تحديث منذ 3 دقائق
+                    .card-buttons-box.d-flex
+                      +GlobalLink("../book-page.html", 'تصفح الكتاب')
+                      +GlobalBtn('انضمام')
+
+
+
+
+
+
+              .card.mb-3.category-page-card
+                .row.g-0
+                  .col-md-4
+                    img.img-fluid.rounded-start(src='/assets/images/physics3.jpg', alt='Book Image')
+                  .col-md-8
+                    .card-body
+                      h5.card-title أينشتاين أفكار و آراء
+                      p.card-text
+                        | هذا النص هو مثال لنص يمـــــــكن أن يستبــــــــدل في نفـــــس المساحة، لقد تم توليد هذا النص من مولد النــــــــص العــربى، حيث يمكنك أن تولد مثل هــذا النـــص أو العديد من النصوص الأخرى.هذا النص هو مثال لنص يمكن أن يستبدل في نــفس المساحة، لقد تم توليد هذا النص من مولد النص الــــــــعربى، حيث يمكنك أن تولد مثل هذا النص.
+                      p.card-text
+                        small.text-muted أخر تحديث منذ 1 ساعة
+                    .card-buttons-box.d-flex 
+                      +GlobalLink("../book-page.html", 'تصفح الكتاب')
+                      +GlobalBtn('انضمام')
+
+
+
+
+
+
+
+              .card.mb-3.category-page-card
+                .row.g-0
+                  .col-md-4
+                    img.img-fluid.rounded-start(src='/assets/images/physics4.jpg', alt='Book Image')
+                  .col-md-8
+                    .card-body
+                      h5.card-title النظرية النسبية
+                      p.card-text
+                        | هذا النص هو مثال لنص يمـــــــكن أن يستبــــــــدل في نفـــــس المساحة، لقد تم توليد هذا النص من مولد النــــــــص العــربى، حيث يمكنك أن تولد مثل هــذا النـــص أو العديد من النصوص الأخرى.هذا النص هو مثال لنص يمكن أن يستبدل في نــفس المساحة، لقد تم توليد هذا النص من مولد النص الــــــــعربى، حيث يمكنك أن تولد مثل هذا النص.
+                      p.card-text
+                        small.text-muted أخر تحديث منذ 3 دقائق
+                    .card-buttons-box.d-flex 
+                      +GlobalLink("../book-page.html", 'تصفح الكتاب')
+                      +GlobalBtn('انضمام')
+
+
+
+              .card.mb-3.category-page-card
+                .row.g-0
+                  .col-md-4
+                    img.img-fluid.rounded-start(src='/assets/images/technology.webp', alt='Book Image')
+                  .col-md-8
+                    .card-body
+                      h5.card-title تاريخ موجز للزمن
+                      p.card-text
+                        | هذا النص هو مثال لنص يمـــــــكن أن يستبــــــــدل في نفـــــس المساحة، لقد تم توليد هذا النص من مولد النــــــــص العــربى، حيث يمكنك أن تولد مثل هــذا النـــص أو العديد من النصوص الأخرى.هذا النص هو مثال لنص يمكن أن يستبدل في نــفس المساحة، لقد تم توليد هذا النص من مولد النص الــــــــعربى، حيث يمكنك أن تولد مثل هذا النص.
+                      p.card-text
+                        small.text-muted أخر تحديث منذ 3 دقائق
+                    .card-buttons-box.d-flex 
+                      +GlobalLink("../book-page.html", 'تصفح الكتاب')
+                      +GlobalBtn('انضمام')
+
+
+
+
+
+
+              .card.mb-3.category-page-card
+                .row.g-0
+                  .col-md-4
+                    img.img-fluid.rounded-start(src='/assets/images/physics3.jpg', alt='Book Image')
+                  .col-md-8
+                    .card-body
+                      h5.card-title أينشتاين أفكار و آراء
+                      p.card-text
+                        | هذا النص هو مثال لنص يمـــــــكن أن يستبــــــــدل في نفـــــس المساحة، لقد تم توليد هذا النص من مولد النــــــــص العــربى، حيث يمكنك أن تولد مثل هــذا النـــص أو العديد من النصوص الأخرى.هذا النص هو مثال لنص يمكن أن يستبدل في نــفس المساحة، لقد تم توليد هذا النص من مولد النص الــــــــعربى، حيث يمكنك أن تولد مثل هذا النص.
+                      p.card-text
+                        small.text-muted أخر تحديث منذ 1 ساعة
+                    .card-buttons-box.d-flex 
+                      +GlobalLink("../book-page.html", 'تصفح الكتاب')
+                      +GlobalBtn('انضمام')
+
+
+
+
+
+
+
+              .card.mb-3.category-page-card
+                .row.g-0
+                  .col-md-4
+                    img.img-fluid.rounded-start(src='/assets/images/physics4.jpg', alt='Book Image')
+                  .col-md-8
+                    .card-body
+                      h5.card-title النظرية النسبية
+                      p.card-text
+                        | هذا النص هو مثال لنص يمـــــــكن أن يستبــــــــدل في نفـــــس المساحة، لقد تم توليد هذا النص من مولد النــــــــص العــربى، حيث يمكنك أن تولد مثل هــذا النـــص أو العديد من النصوص الأخرى.هذا النص هو مثال لنص يمكن أن يستبدل في نــفس المساحة، لقد تم توليد هذا النص من مولد النص الــــــــعربى، حيث يمكنك أن تولد مثل هذا النص.
+                      p.card-text
+                        small.text-muted أخر تحديث منذ 3 دقائق
+                    .card-buttons-box.d-flex 
+                      +GlobalLink("../book-page.html", 'تصفح الكتاب')
+                      +GlobalBtn('انضمام')
+
+
+
+
+
+
+
+
+
+
+    include includes/footer.pug
+
+
+    include includes/script.pug
+    script(src='https://cdn.jsdelivr.net/npm/sweetalert2@11')
+    script(src="../assets/js/categoryPage.js") 

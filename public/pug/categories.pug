@@ -1,0 +1,123 @@
+doctype html
+html(lang="ar" dir='rtl')
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(rel='icon', type='image/x-icon', href='/assets/images/favIcon.png')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    include includes/styles.pug
+    include includes/mixins.pug
+    title التصنيفات
+  body
+    .home-page-layout 
+      // Start main section 
+      +navbar('categories')
+
+
+      +pageBackgroundSection('التصنيفات','pagesBg.png')
+      main
+        section.global-section 
+          .container
+            .global-section-layout
+              .categories-container.d-grid
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/technology.webp', alt='technology')
+                    .card-body
+                      h5.card-title التكنولوجيا
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/political-science.jpg', alt='political science')
+                    .card-body
+                      h5.card-title العلوم السياسية
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/food.jpg', alt='food')
+                    .card-body
+                      h5.card-title الطعام
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/space-science.png', alt='space science')
+                    .card-body
+                      h5.card-title علوم الفضاء
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/physics.jpg', alt='physics')
+                    .card-body
+                      h5.card-title الفيزياء
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/sport.jpg', alt='sport')
+                    .card-body
+                      h5.card-title الرياضة
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/art.webp', alt='art')
+                    .card-body
+                      h5.card-title الفنون
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/adab.jpg', alt='adab')
+                    .card-body
+                      h5.card-title الأدب
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/technology.webp', alt='technology')
+                    .card-body
+                      h5.card-title التكنولوجيا
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/political-science.jpg', alt='political science')
+                    .card-body
+                      h5.card-title العلوم السياسية
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/food.jpg', alt='food')
+                    .card-body
+                      h5.card-title الطعام
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/space-science.png', alt='space science')
+                    .card-body
+                      h5.card-title علوم الفضاء
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/physics.jpg', alt='physics')
+                    .card-body
+                      h5.card-title الفيزياء
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/sport.jpg', alt='sport')
+                    .card-body
+                      h5.card-title الرياضة
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/art.webp', alt='art')
+                    .card-body
+                      h5.card-title الفنون
+                .col
+                  a(href="../category-page.html").card.customized-card.category-card
+                    .card-img-box
+                      img.card-img-top(src='/assets/images/adab.jpg', alt='adab')
+                    .card-body
+                      h5.card-title الأدب
+
+    include includes/footer.pug
+
+
+    include includes/script.pug

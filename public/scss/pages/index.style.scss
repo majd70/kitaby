@@ -1,0 +1,76 @@
+// Start Import Files
+
+@use '../variables/colors' as *;
+
+@use '../helpers/mixins' as *;
+
+// Start Import Components
+@use '../components/heroSection.style.scss' as *;
+
+.intro-text {
+    max-width: 700px;
+    background: $white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    margin-right: 30px;
+
+    .section-title {
+        text-align: unset;
+    }
+
+    p {
+        color: $main-color;
+        line-height: 1.7;
+        font-weight: 500;
+    }
+}
+
+// Start Categories nav
+.modern-categories-section {
+    padding-top: 60px;
+
+    div#nav-tab {
+        @include centering;
+
+        gap: 15px;
+        padding-bottom: 15px;
+
+        .nav-link {
+            background: $white;
+            border-radius: 8px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border: none;
+            color: $main-color;
+
+            &.active {
+                border: none;
+                color: $light-fuchsia;
+            }
+
+            &:hover {
+                color: $light-fuchsia;
+            }
+        }
+    }
+
+    .tab-content {
+        padding-top: 15px;
+
+        .tab-pane {
+            .panel-grid {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+            }
+        }
+
+        .hero-btn-box {
+            margin: auto;
+            margin-top: 25px;
+        }
+    }
+}
+
+// End Categories nav

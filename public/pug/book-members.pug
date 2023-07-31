@@ -1,0 +1,171 @@
+doctype html
+html(lang="ar" dir='rtl')
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(rel='icon', type='image/x-icon', href='/assets/images/favIcon.png')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    include includes/styles.pug
+    include includes/mixins.pug
+    title التصنيفات
+  body
+    .home-page-layout 
+      // Start main section 
+      +navbar('')
+
+      main
+        // Start Book Page Cover Section 
+        +bookCover('members')
+        // End Book Page Cover Section 
+
+        // Start Member Section
+        section.members-section 
+          .small-container 
+            .members-content
+              .members-subtitle-box.d-flex.align-items-center.justify-content-start 
+                h2.members-subtitle.m-0 الأعضاء
+                p.members-title-dot.m-0 
+                p.members-number.m-0 13
+              .border-member
+                .member-box.b-member
+                  .member-img-box 
+                    a(href="../profile.html")
+                      img(src="../assets/images/mohammed.jpg", alt="member image")
+                  .member-info 
+                    a.member-link(href="../profile.html")
+                      p محمد أشرف ريان
+                  ul.post-action-menu
+                    li.nav-item.dropdown.bootstrap-things
+                      a.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+                        p.post-dot
+                        p.post-dot
+                        p.post-dot
+                      ul.dropdown-menu
+                        li
+                          button.dropdown-item(type='button') غادر المجموعة
+
+          
+          
+          
+                .members-subtitle-box.d-flex.align-items-center.justify-content-start.m-0.mt-3
+                  h2.members-subtitle.m-0 المشرفون
+                  p.members-title-dot.m-0 
+                  p.members-number.m-0 1
+                .member-box.pb-0
+                  .member-img-box 
+                    a(href="../profile.html")
+                      img(src="../assets/images/profilePhoto.webp", alt="member image")
+                  .member-info 
+                    a.member-link(href="../profile.html")
+                      p عبد الرحمن 
+                  .visit-member-profile 
+                    a(href="../profile.html")
+                      img(src="../assets/images/seeProfile.png", alt="see profile")
+
+          
+
+              .member-box
+                .member-img-box
+                  a(href="../profile.html")
+                    img(src="../assets/images/profileImg.png", alt="member image")
+                .member-info 
+                  a.member-link(href="../profile.html")
+                    p عبد الله محمد
+                .visit-member-profile 
+                  a(href="../profile.html")
+                    img(src="../assets/images/seeProfile.png", alt="see profile")
+        
+        
+        
+        
+
+          
+
+              .member-box
+                .member-img-box 
+                  a(href="../profile.html")
+                    img(src="../assets/images/profilePhoto.webp", alt="member image")
+                .member-info 
+                  a.member-link(href="../profile.html")
+                    p عبد الله محمد
+                .visit-member-profile 
+                  a(href="../profile.html")
+                    img(src="../assets/images/seeProfile.png", alt="see profile")
+        
+        
+        
+        
+
+          
+
+              .member-box
+                .member-img-box 
+                  a(href="../profile.html")
+                    img(src="../assets/images/profileImg.png", alt="member image")
+                .member-info 
+                  a.member-link(href="../profile.html")
+                    p عبد الله محمد
+                .visit-member-profile 
+                  a(href="../profile.html")
+                    img(src="../assets/images/seeProfile.png", alt="see profile")
+        
+        
+        
+        
+
+          
+
+              .member-box
+                .member-img-box 
+                  a(href="../profile.html")
+                    img(src="../assets/images/profileAvatar.png", alt="member image")
+                .member-info 
+                  a.member-link(href="../profile.html")
+                    p عبد الله محمد
+                .visit-member-profile 
+                  a(href="../profile.html")
+                    img(src="../assets/images/seeProfile.png", alt="see profile")
+        
+        
+        
+        
+
+          
+
+              .member-box
+                .member-img-box 
+                  a(href="../profile.html")
+                    img(src="../assets/images/profileAvatar2.jpg", alt="member image")
+                .member-info 
+                  a.member-link(href="../profile.html")
+                    p عبد الله محمد
+                .visit-member-profile 
+                  a(href="../profile.html")
+                    img(src="../assets/images/seeProfile.png", alt="see profile")
+        
+        
+        
+        
+        // End Member Section 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    include includes/footer.pug
+
+
+    include includes/script.pug

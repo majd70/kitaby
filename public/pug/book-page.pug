@@ -1,0 +1,235 @@
+doctype html
+html(lang="ar" dir='rtl')
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(rel='icon', type='image/x-icon', href='/assets/images/favIcon.png')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    include includes/styles.pug
+    include includes/mixins.pug
+    title التصنيفات
+  body
+    .home-page-layout 
+      // Start main section 
+      +navbar('')
+
+      main
+        // Start Book Page Cover Section 
+        +bookCover('discussion')
+        // End Book Page Cover Section 
+        // Start Book Posts Section 
+        section.posts-section
+          .container  
+            .small-container
+              .create-post-box.post-box
+                .write-post-layout.d-grid
+                  .post-writer-img-box
+                    a(href="../profile.html").d-flex.justify-content-between.align-items-center
+                      img(src="../assets/images/mohammed.jpg", alt="post writer img" class='post-writer-img')
+                  .write-post-text-area.start-post(id="openMrModal")
+                    span أكتب منشور ...
+                .post-photo-box.d-flex.justify-content-center.align-items-center.start-post
+                  img(src="../assets/images/postPhoto.png", alt="Post Photo")
+                  span صورة
+                  span /
+                  span فيديو
+
+
+              .mr-modal-container#modalContainer
+                from.mr-modal-box
+                  #mrAddProduct
+                    .mr-modal-header 
+                      button(type="button" ,class="close-btn" id="closeModal")
+                        svg.mr-modal-prev-svg 
+                          use(href="../assets/images/icons/icons.svg#close")
+                      h2.myModal-title أكتب منشور
+                    .product-details-box
+                      .write-post-modal.d-flex
+                        .post-writer-img-box
+                          a(href="../profile.html").d-flex.justify-content-between.align-items-center
+                            img(src="../assets/images/mohammed.jpg", alt="post writer img" class='post-writer-img')
+                        a(href="../profile.html").post-writer-name محمد أشرف ريان 
+                      .post-content 
+                        textarea.modal-input.textarea(name="", cols="30", rows="10" placeholder="وصف الكتاب")
+                        #imagesBox
+                      .push-post-box
+                        .post-photo-box.d-flex.justify-content-center.align-items-center.start-post
+                          label(for="uploadImg").post-img-label
+                            input#uploadImg(type='file' accept='image/*' onchange='readURL(this)' class="choose-photograph-input")
+                            img(src="../assets/images/postPhoto.png", alt="Post Photo")
+                            span صورة
+                            span /
+                            span فيديو
+                        button(type="button" class="mr-modal-btn" id='postBtn') أنشر
+            
+
+
+
+
+
+              .post-box 
+                .post-info.d-flex.justify-content-between.align-items-center
+                  .post-writer-info.d-flex
+                    .post-writer-img-box
+                      a(href="../profile.html").d-flex.justify-content-between.align-items-center
+                        img(src="../assets/images/mohammed.jpg", alt="post writer img" class='post-writer-img')
+                    .post-writer-name-and-date.d-flex.flex-column
+                      a(href="../profile.html").post-writer-name محمد أشرف ريان 
+                      .post-date 
+                        span.day 12
+                        span.month نيسان
+                        | -
+                        span.clock 1:56
+                        span.am-pm م
+                  ul.post-action-menu
+                    li.nav-item.dropdown.bootstrap-things
+                      a.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+                        p.post-dot
+                        p.post-dot
+                        p.post-dot
+                      ul.dropdown-menu
+                        li
+                          button.dropdown-item(type='button') تعديل
+                        li
+                          button.dropdown-item(type='button') حذف
+                .post-body 
+                  .post-text-box 
+                    p.post-text "اللهمّ اكْفِنِي بحلالِكَ عن حرامِكَ واغْننِي بفضلكَ عمن سواكَ“ 
+                .post-reactions-box 
+                  .reaction-container.d-flex.align-items-center
+                    button.reaction-box.like-reaction-btn
+                      .like-reaction
+                      p.reaction-type أعجبني
+                    button.reaction-box 
+                      .comment-reaction
+                      p.reaction-type تعليق
+                .comments-box 
+                  .write-comment.d-grid
+                    .comment-writer-img 
+                      a(href="../profile.html").d-flex.justify-content-between.align-items-center
+                        img(src="../assets/images/profilePhoto.webp", alt="comment writer")
+                    form(action="", class='write-comment-inputs-box') 
+                      textarea(name="", class='input-comment-text' , placeholder='أكتب تعليق ...')
+                      label(for="commentFile" , class='input-file-label')
+                        svg 
+                          use(href='../assets/images/icons/icons.svg#Camera')
+                        input#commentFile(type="file", class='input-comment-file')
+                  
+
+
+
+
+              .post-box 
+                .post-info.d-flex.justify-content-between.align-items-center
+                  .post-writer-info.d-flex
+                    .post-writer-img-box
+                      a(href="../profile.html").d-flex.justify-content-between.align-items-center
+                        img(src="../assets/images/profilePhoto.webp", alt="post writer img" class='post-writer-img')
+                    .post-writer-name-and-date.d-flex.flex-column
+                      a(href="../profile.html").post-writer-name مجد الديراوي
+                      .post-date 
+                        span.day 13
+                        span.month أذار
+                        | -
+                        span.clock 8:56
+                        span.am-pm م
+                  ul.post-action-menu
+                    li.nav-item.dropdown.bootstrap-things
+                      a.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+                        p.post-dot
+                        p.post-dot
+                        p.post-dot
+                      ul.dropdown-menu
+                        li
+                          button.dropdown-item(type='button') تعديل
+                        li
+                          button.dropdown-item(type='button') حذف
+                .post-body 
+                  .post-text-box 
+                    p.post-text اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ . 
+                .post-reactions-box 
+                  .reaction-container.d-flex.align-items-center
+                    button.reaction-box.like-reaction-btn
+                      .like-reaction
+                      p.reaction-type أعجبني
+                    button.reaction-box 
+                      .comment-reaction
+                      p.reaction-type تعليق
+                .comments-box 
+                  .write-comment.d-grid
+                    .comment-writer-img 
+                      a(href="../profile.html").d-flex.justify-content-between.align-items-center
+                        img(src="../assets/images/mohammed.jpg", alt="comment writer")
+                    form(action="", class='write-comment-inputs-box') 
+                      textarea(name="", class='input-comment-text' , placeholder='أكتب تعليق ...')
+                      label(for="commentFile" , class='input-file-label')
+                        svg 
+                          use(href='../assets/images/icons/icons.svg#Camera')
+                        input#commentFile(type="file", class='input-comment-file')
+                        
+                  .comment-body 
+                    .posted-comment.d-flex
+                      .comment-writer-img 
+                        a(href="../profile.html").d-flex.justify-content-between.align-items-center
+                          img(src="../assets/images/mohammed.jpg", alt="comment writer")
+                      .posted-comment-text-box.d-flex.flex-column 
+                        a(href="../profile.html").comment-writer-name محمد أشرف ريان 
+                        p.comment-text اللهمّ اكْفِنِي بحلالِكَ عن حرامِكَ واغْننِي بفضلكَ عمن سواكَ
+                      ul.post-action-menu
+                        li.nav-item.dropdown.bootstrap-things
+                          a.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            p.post-dot
+                            p.post-dot
+                            p.post-dot
+                          ul.dropdown-menu
+                            li
+                              button.dropdown-item(type='button') تعديل
+                            li
+                              button.dropdown-item(type='button') حذف
+                    .comment-reactions-box 
+                      button.reaction-box.like-reaction-btn
+                        p.reaction-type أعجبني
+
+                  .comment-body 
+                    .posted-comment.d-flex
+                      .comment-writer-img 
+                        a(href="../profile.html").d-flex.justify-content-between.align-items-center
+                          img(src="../assets/images/profilePhoto.webp", alt="comment writer")
+                      .posted-comment-text-box.d-flex.flex-column 
+                        a(href="../profile.html").comment-writer-name الحسن
+                        p.comment-text اللهم آمين
+                      ul.post-action-menu
+                        li.nav-item.dropdown.bootstrap-things
+                          a.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+                            p.post-dot
+                            p.post-dot
+                            p.post-dot
+                          ul.dropdown-menu
+                            li
+                              button.dropdown-item(type='button') تعديل
+                            li
+                              button.dropdown-item(type='button') حذف
+                    .comment-reactions-box 
+                      button.reaction-box.like-reaction-btn
+                        p.reaction-type أعجبني
+
+
+        // End Book Posts Section 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    include includes/footer.pug
+
+
+    include includes/script.pug
+    script(src="../assets/js/book.js") 

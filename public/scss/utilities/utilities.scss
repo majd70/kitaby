@@ -1,0 +1,65 @@
+// Start Import Files
+@use '../layout/global-rules' as *;
+
+@use '../variables/colors' as *;
+
+@use '../helpers/classes' as *;
+
+@use '../helpers/mixins' as *;
+
+// Start Swiper Customization
+.index-info-section {
+    padding-top: 25px;
+    overflow-x: hidden;
+
+    .swiper {
+        &.mySwiper {
+            max-width: 100%;
+            max-height: 360px;
+
+            .swiper-slide {
+                //     img {
+                //         filter: grayscale(1);
+                //         transition: all 0.3s;
+                //     }
+
+                //     &:hover {
+                //         img {
+                //             filter: grayscale(0);
+                //         }
+                //     }
+                .card {
+                    border: 1px solid $gray;
+                }
+            }
+
+            .swiper-wrapper {
+                margin-bottom: 40px;
+            }
+
+            .swiper-pagination {
+                @include centering;
+
+                .swiper-pagination-bullet {
+                    width: 10px;
+                    height: 10px;
+                }
+
+                .swiper-pagination-bullet-active {
+                    width: 12px;
+                    height: 12px;
+                    background-color: $light-fuchsia;
+                }
+            }
+        }
+    }
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    font-size: 20px;
+    font-weight: 800;
+    color: $light-fuchsia;
+}
+
+// End Swiper Customization

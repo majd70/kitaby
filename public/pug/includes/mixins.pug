@@ -1,0 +1,145 @@
+// Start NavBar
+
+mixin navbar(activePage)
+  .nav-bar-component
+    .container
+      nav.navbar.navbar-expand-lg
+        .container-fluid
+          a.navbar-brand(href='#')
+            img(src="/assets/images/Logo.png" alt="Logo", class='nav-log')
+          button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.nav-line
+            span.nav-line
+            span.nav-line
+          #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.me-auto.mb-2.mb-lg-0.main-list
+              li.nav-item
+                a(class=(activePage == 'home' ? 'nav-link active' : 'nav-link'),href='/') الرئيسة
+              li.nav-item
+                a(class=(activePage == 'categories' ? 'nav-link active' : 'nav-link'),href='../../categories.html') التصنيفات
+              li.nav-item
+                a(class=(activePage == 'about' ? 'nav-link active' : 'nav-link'),href='../../about.html') من نحن
+              li.nav-item
+                a(class=(activePage == 'contact' ? 'nav-link active' : 'nav-link'),href='../../contactUs.html') تواصل معنا
+      ul.navbar-nav.mb-2.mb-lg-0.navbar-absolute
+        li.nav-item.dropdown.bootstrap-things.profile-icon-box
+          a.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+            img(src="/assets/images/mohammed.jpg", alt="profile icon" , class="profile-icon")
+
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='../../profile.html').log-link
+                span الملف الشخصي 
+                svg
+                  use(href="/assets/images/icons/icons.svg#profile")
+            li
+              a.dropdown-item(href='#').log-link
+                span تسجيل الخروج 
+                svg
+                  use(href="/assets/images/icons/icons.svg#logout")
+        li.nav-item.dropdown.bootstrap-things
+          a.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+            img(src="/assets/images/notifications.png", alt="notifications")
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='#')
+                .notification-row.d-flex.align-items-center
+                  img(src="/assets/images/notifiPhonto.jpg", alt="person img" , class="person-img")
+                  .notification-info 
+                    p.notification.d-flex.flex-wrap
+                      span قام محمد ريان بإضافة منشور جديد إلى كتاب 
+                      span العودة إلى الذات
+                    p.notification-time من 1 ساعة
+            li
+              a.dropdown-item(href='#')
+                .notification-row.d-flex.align-items-center
+                  img(src="/assets/images/notifiPhonto.jpg", alt="person img" , class="person-img")
+                  .notification-info 
+                    p.notification.d-flex.flex-wrap
+                      span قام محمد ريان بإضافة منشور جديد إلى كتاب 
+                      span العودة إلى الذات
+                    p.notification-time من 1 ساعة
+            li
+              a.dropdown-item(href='#')
+                .notification-row.d-flex.align-items-center
+                  img(src="/assets/images/notifiPhonto.jpg", alt="person img" , class="person-img")
+                  .notification-info 
+                    p.notification.d-flex.flex-wrap
+                      span قام محمد ريان بإضافة منشور جديد إلى كتاب 
+                      span العودة إلى الذات
+                    p.notification-time من 1 ساعة
+
+
+// End NavBar
+
+//- Start Section Title 
+mixin sectionTitle(sectionTitle)
+  .section-title 
+    h2=sectionTitle
+//- End Page Title 
+
+//- Start OverLay 
+mixin overLay
+  .overlay
+//- End OverLay 
+
+//- Start Global Button 
+mixin GlobalBtn(text)
+  button(type='button').global-btn-box.swal-button=text 
+
+//- End Global Button 
+
+//- Start Global Button 
+mixin GlobalLink(link,text)
+  a(href=link).global-btn-box= text
+//- End Global Button 
+
+
+
+//- Start About Us Section 
+mixin AboutUs(aboutImg,aboutTitle,aboutText,position)
+  section.about-us-section.d-grid
+    if position== 'even'
+      .about-img-box 
+        img(src=`../assets/images/${aboutImg}`, alt="About Img", class='about-img')
+      .about-info-box 
+        h2.about-title=aboutTitle 
+        p.about-text=aboutText 
+    else if position== 'odd'
+      .about-info-box 
+        h2.about-title=aboutTitle 
+        p.about-text=aboutText 
+      .about-img-box 
+        img(src=`../assets/images/${aboutImg}`, alt="About Img", class='about-img')
+//- End About Us Section 
+
+
+//- Start Pages Background Section 
+mixin pageBackgroundSection(sectionTitle,imgSrc)
+  .page-background-section 
+    img(src=`../../assets/images/${imgSrc}`, alt="pagesBg")
+    h1.bg-section-title= sectionTitle
+//- Emd Pages Background Section 
+
+
+//- Start Input Box Mixin 
+mixin globalInput(labelFor,label,type,placeholder)
+  .global-input-box.d-flex.flex-column 
+    label(for= labelFor)= label
+    input(type= type ,id= labelFor, placeholder= placeholder)
+//- End Input Box Mixin 
+
+// Start Book Cover Section 
+mixin bookCover(activePage)
+  section.book-cover 
+    .container
+      .cover-img-box 
+        img(src="../assets/images/heroBG.png", alt="book cover", class='book-cover-img')
+    .container.mr-container
+      .book-name-box 
+        h1.book-name تاريخ موجز للزمن
+      .book-pages-bar 
+        a(href="../../book-page.html" class=(activePage == 'discussion' ? 'book-bar-links active' : 'book-bar-links')) حوار
+        a(href="../../book-members.html" class=(activePage == 'members' ? 'book-bar-links active' : 'book-bar-links')) الأعضاء
+        a(href="../../about-book.html" class=(activePage == 'about' ? 'book-bar-links active' : 'book-bar-links')) عن الكتاب
+// End Book Cover Section 

@@ -1,0 +1,77 @@
+@use '../variables/colors' as *;
+
+@use '../layout/global-rules' as *;
+
+@use '../helpers/mixins' as *;
+
+.input-form {
+    border: 1px solid #D6E1E9;
+    border-radius: 5px;
+    height: 48px;
+    line-height: 17px;
+    outline: none;
+    padding: 2px 5px 2px 30px;
+    direction: rtl;
+
+    &::placeholder {
+        font-size: 14px;
+        color: rgba(163, 180, 192, 0.62);
+    }
+}
+
+form {
+    &.contact-form {
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 23px;
+        border-radius: 5px;
+        gap: 22px;
+
+        .form-title {
+            font-weight: 600;
+            font-size: 30px;
+            color: $main-color;
+            text-align: center;
+        }
+
+        .form-sub-title {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 158.9%;
+            text-align: center;
+            color: rgba(24, 35, 65, 0.51);
+            max-width: 477px;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+
+        .inputs-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            align-items: center;
+
+            @media ($min_tablet) and ($lg-desktop) {
+                grid-template-columns: 1fr;
+            }
+
+            @media ($max_phone) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-message {
+            @extend .input-form;
+
+            min-height: 185px;
+            padding: 15px;
+        }
+
+        .global-btn {
+            max-width: initial;
+            margin-top: 28px;
+        }
+    }
+}

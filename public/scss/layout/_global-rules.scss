@@ -1,0 +1,72 @@
+@use '../variables/colors' as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+// Start Media Sizes
+$min_phone: "min-width:576px";
+$max_phone: "max-width:575px";
+$max_tablet: "max-width:767px";
+$min_tablet: "min-width:768px";
+$max_desktop: "max-width:991px";
+$min_desktop: "min-width:992px";
+$lg-desktop: "max-width:1199px";
+$min-lg-desktop: "min-width:1200px";
+
+// End Media Sizes
+
+body {
+    background-color: $background-color;
+}
+
+// Start ScrollBar 
+//  width
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+//    Track
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+//    Handle
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+}
+
+//    Handle on hover
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+// End ScrollBar
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+// Start Fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+// End Fonts

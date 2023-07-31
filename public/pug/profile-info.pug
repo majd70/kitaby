@@ -1,0 +1,91 @@
+doctype html
+html(lang="ar" dir='rtl')
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(rel='icon', type='image/x-icon', href='/assets/images/favIcon.png')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    include includes/styles.pug
+    include includes/mixins.pug
+    title الصفحة الرئيسة
+  body
+    .home-page-layout 
+      +navbar('')
+
+      main.profile.top-padding
+
+        section.profile-main-section  
+          .container-fluid
+            .profile-cover-box
+              .layout
+              img(src='../assets/images/heroBG.jpg', alt="Profile Cover Img" , class="profile-cover-img")
+              button(type="button").change-cover
+                svg 
+                  use(href="assets/images/icons.svg#Camera")
+                span تعديل صورة الغلاف
+          .profile-top-section-content
+
+            .container
+              .profile-info-box
+                .profile-photo-box 
+                  img(src='../assets/images/profilePhoto.webp', alt="Profile Photo")
+                  label(for="profilePhoto").change-profile-photo 
+                    input#profilePhoto(type="file", name="")
+                    svg 
+                      use(href="assets/images/icons/icons.svg#Camera")
+                .profile-links-box
+                  h2.parson-name محمد أشرف ريان
+                  ul
+                    li.profile-type-link.active
+                      a(href='../profile-info.html') بيانات الحساب
+
+
+
+
+
+
+
+        section.profile-content-section.main-padding
+          .container
+            .account-details-box 
+              h4.account-details-title بيانات عامة
+              form.account-details-form
+                .edit-account-brief
+                  label(for="#brief") نبذة مختصرة
+                  textarea#brief.account-brief-text(placeholder="نبذة قصيرة عنك")
+                  
+                .interests.edit-account-brief
+                  label(for="#interests") الاهتمامات
+                  textarea#interests.account-interests-text.account-brief-text(placeholder="الاهتمامات")
+
+                .form-btn-box 
+                  +GlobalBtn("حفظ التعديلات")
+            .account-details-box 
+              h4.account-details-title بيانات خاصة
+              form.account-details-form
+                .form-row 
+                  +globalInput("accountName","الاسم الكامل","text" , "الاسم الكامل")
+                  +globalInput("accountDateOfBirth","تاريخ الميلاد","text" , "03/01/1997")
+                .form-row 
+                  +globalInput("accountEmail","البريد الالكتروني","text" , "example@gmail.com")
+                  +globalInput("accountPhoneNumber","رقم الهاتف","text" , "+966 7845 783")
+                .form-row 
+                  +globalInput("accountCountry","الدولة","text" , "فلسطين")
+                  +globalInput("accountAddress","العنوان","text" , "غزة - النصيرات")
+                .form-btn-box 
+                  +GlobalBtn("حفظ التعديلات")
+            .account-details-box 
+              h4.account-details-title كلمة المرور
+              form.account-details-form
+                .form-row 
+                  +globalInput("accountOldPassword","كلمة المرور القديمة","password" , "اكتب هنا...")
+                  +globalInput("accountNewPassword","كلمة المرور الجديدة","password" , "اكتب هنا...")
+                .form-btn-box 
+                  +GlobalBtn("تغيير الكلمة")
+
+    
+    include includes/footer.pug
+
+
+    include includes/script.pug
+

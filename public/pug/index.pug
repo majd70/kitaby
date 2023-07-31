@@ -1,0 +1,209 @@
+doctype html
+html(lang="ar" dir='rtl')
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(rel='icon', type='image/x-icon', href='/assets/images/favIcon.png')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    include includes/styles.pug
+    include includes/mixins.pug
+    title الصفحة الرئيسة
+  body
+    .home-page-layout 
+      // Start main section 
+      +navbar('home')
+      main
+        section.hero-section 
+          .hero-text-container 
+            h1.hero-title ابدأ الأن بمناقشة الكتب المهُتم بها
+            h2.hero-subtitle أسلوب جديد لمناقشة الكتب بالعربية
+            .hero-btn-box
+              a(href='../Sign-up.html') ابدأ الأن
+          +overLay() 
+          video.hero-bg(loop, muted, autoplay)
+            source(src='../assets/videos/heroVideo.mp4', type='video/mp4')
+
+        section.modern-categories-section 
+          .container
+            +sectionTitle('التصنيفات و أحدث الكتب')
+            nav
+              #nav-tab.nav.nav-tabs(role='tablist')
+                button#nav-physics-tab.nav-link.active(data-bs-toggle='tab', data-bs-target='#nav-physics', type='button', role='tab', aria-controls='nav-home', aria-selected='true') الفيزياء
+                button#references-tab.nav-link(data-bs-toggle='tab', data-bs-target='#nav-references', type='button', role='tab', aria-controls='nav-psychology', aria-selected='false') المراجع و الأبحاث
+                button#psychology-tab.nav-link(data-bs-toggle='tab', data-bs-target='#nav-psychology', type='button', role='tab', aria-controls='nav-psychology', aria-selected='false') علم النفس وتطوير الذات
+                button#nav-politics-tab.nav-link(data-bs-toggle='tab', data-bs-target='#nav-politics', type='button', role='tab', aria-controls='nav-politics', aria-selected='false') السياسة
+                button#literature-tab.nav-link(data-bs-toggle='tab', data-bs-target='#nav-literature', type='button', role='tab', aria-controls='nav-literature', aria-selected='false') الأدب
+
+            #nav-tabContent.tab-content
+              #nav-physics.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='nav-home-tab', tabindex='0')
+                .panel-grid
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/physics1.webp', alt='physics')
+                      .card-body
+                        h5.card-title البحث عن قطة شرودنجر
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/physics2.jpg', alt='sport')
+                        .card-body
+                          h5.card-title تاريخ موجز للزمن
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/physics3.jpg', alt='art')
+                      .card-body
+                        h5.card-title أينشتاين أفكار و آراء
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/physics4.jpg', alt='adab')
+                      .card-body
+                        h5.card-title النظرية النسبية
+  
+
+              #nav-politics.tab-pane.fade(role='tabpanel', aria-labelledby='nav-politics-tab', tabindex='0')
+                .panel-grid
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/politics1.jpg', alt='physics')
+                      .card-body
+                        h5.card-title مونتسكيو السياسة و التاريخ
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/politics2.jpg', alt='sport')
+                        .card-body
+                          h5.card-title حول العرب و العروبة
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/politics3.png', alt='art')
+                      .card-body
+                        h5.card-title السياسة الخارجية الروسية في أسيا الوسطى و القوقاز
+              #nav-literature.tab-pane.fade(role='tabpanel', aria-labelledby='nav-literature-tab', tabindex='0')
+                .panel-grid
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/literature1.webp', alt='adab')
+                      .card-body
+                        h5.card-title الخيميائي
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/literature2.webp', alt='art')
+                      .card-body
+                        h5.card-title عبقرية عمر
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/literature3.webp', alt='sport')
+                        .card-body
+                          h5.card-title وحي القلم
+              
+              
+              
+              
+              #nav-psychology.tab-pane.fade(role='tabpanel', aria-labelledby='nav-psychology-tab', tabindex='0')
+                .panel-grid
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/psychology1.webp', alt='adab')
+                      .card-body
+                        h5.card-title كيفما فكرت فكر العكس
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/psychology2.webp', alt='art')
+                      .card-body
+                        h5.card-title كن أنتَ
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/psychology3.webp', alt='sport')
+                        .card-body
+                          h5.card-title كيف أُنظم حياتي
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/psychology4.webp', alt='sport')
+                        .card-body
+                          h5.card-title نظرية الفستق
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/psychology5.webp', alt='sport')
+                        .card-body
+                          h5.card-title كيف أتخلص من التوتر
+              
+              
+              
+              
+              #nav-references.tab-pane.fade(role='tabpanel', aria-labelledby='nav-references-tab', tabindex='0')
+                .panel-grid
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/references1.webp', alt='adab')
+                      .card-body
+                        h5.card-title في الشعر الجاهلي
+                  .col
+                    a(href="../book-page.html").card.customized-card
+                      .card-img-box
+                        img.card-img-top(src='/assets/images/references2.webp', alt='art')
+                      .card-body
+                        h5.card-title اليهود الموسوعة الحرة
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/references3.webp', alt='sport')
+                        .card-body
+                          h5.card-title نجد و الحجاز في الوثائق العثمانية
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/references4.webp', alt='sport')
+                        .card-body
+                          h5.card-title موسوعة مصر القديمة
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/references5.webp', alt='sport')
+                        .card-body
+                          h5.card-title الأمثال العامية
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/references6.webp', alt='sport')
+                        .card-body
+                          h5.card-title الكليات في الطب
+                  .col
+                      a(href="../book-page.html").card.customized-card
+                        .card-img-box
+                          img.card-img-top(src='/assets/images/references7.jpg', alt='sport')
+                        .card-body
+                          h5.card-title أهم الاختراعات و الاكتشافات
+
+
+
+
+
+              .hero-btn-box
+                a(href='../categories.html') اكتشف المزيد
+    
+    
+    
+    
+    
+    include includes/footer.pug
+
+
+
+    script(src="../assets/js/home.js") 
+    
+    include includes/script.pug
+

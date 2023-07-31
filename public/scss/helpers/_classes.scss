@@ -1,0 +1,263 @@
+@use '../variables/colors' as *;
+
+@use '../layout/global-rules' as *;
+
+@use '../helpers/mixins' as *;
+
+// Start Line
+.line-over {
+    width: 100%;
+    margin: 10px 0;
+    border-bottom: 1px solid #CED0D4;
+}
+
+// End Line
+
+// Start Logout
+.log-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 5px;
+
+    svg {
+        width: 17px;
+        height: 17px;
+        stroke: $main-color;
+    }
+
+    &:active {
+        background-color: $light-fuchsia;
+    }
+}
+
+// End Logout
+
+// Start Page Title
+.page-title {
+    text-align: center;
+    padding: 10px 0;
+    padding-top: 73px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: $light-gray;
+    top: 0;
+
+    h1 {
+        font-size: 25px;
+        color: $main-color;
+    }
+}
+
+// End  Page Title
+
+// Start Section Title
+.section-title {
+    text-align: center;
+    margin-bottom: 25px;
+
+    h2 {
+        font-size: 22px;
+        color: $light-fuchsia;
+    }
+}
+
+// End Section Title
+
+// Start Overlay
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+// End .Overlay
+.home-page-layout {
+    min-height: calc(100vh - 289.46px);
+}
+
+// Start Hero Button
+.hero-btn-box {
+    background: $light-fuchsia;
+    width: 180px;
+    height: 50px;
+    color: $white;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+
+    a {
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+    }
+}
+
+// End Hero Button
+
+// Start Main Section Padding
+.main-padding {
+    padding-top: 100px;
+}
+
+// End Main Section Padding
+
+// Start Global Button
+.global-btn-box {
+    @include centering;
+
+    width: 200px;
+    height: 47px;
+    background-color: rgba(247, 68, 78, 0.8);
+    color: $white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: auto;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: $light-fuchsia;
+        color: $white;
+    }
+
+    &.create-group-btn {
+        gap: 10px;
+        background-color: $second-color;
+        margin: 0;
+        margin-bottom: 30px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: $white;
+        }
+
+        &:hover {
+            background-color: #37aebc;
+        }
+    }
+}
+
+// End Global Button
+// Start Global Input Style
+.global-input-box {
+    label {
+        margin-bottom: 10px;
+        color: $main-color;
+        font-weight: 400;
+        font-size: 16px;
+
+        @media ($max_phone) {
+            font-size: 13px;
+        }
+    }
+
+    input {
+        direction: rtl;
+        height: 51px;
+        width: 100%;
+
+        @media ($min_phone) {
+            width: 426px;
+        }
+
+        @media ($max_phone) {
+            height: 42px;
+        }
+
+        background-color: $gray;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+        padding: 0 10px;
+        font-size: 14px;
+
+        &::placeholder {
+            font-size: 13px;
+            color: $most-gray;
+
+            @media ($max_phone) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &.sign-phone-input {
+        input {
+            direction: ltr;
+            outline: none;
+            box-shadow: none;
+            border: 1px solid #E3E9EF;
+
+            &:focus {
+                background-color: $gray;
+            }
+        }
+    }
+}
+
+// End Global Input Style
+
+.top-padding {
+    // Padding = navbar height
+    padding-top: 57.7px;
+}
+
+.layout {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    background: rgba(24, 35, 65, 0.2);
+    z-index: -1;
+}
+
+.small-container {
+    width: 600px;
+    margin: auto;
+}
+
+.post-action-menu {
+    @include centering;
+
+    margin: 0;
+
+    .post-dot {
+        width: 4px;
+        height: 4px;
+    }
+
+    .dropdown-item {
+        font-size: 14px;
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        gap: 1px;
+
+        .post-dot {
+            width: 5px;
+            height: 5px;
+            background: $second-gray;
+            display: block;
+            border-radius: 50%;
+            margin: 0;
+        }
+
+        &::after {
+            display: none !important;
+        }
+    }
+}

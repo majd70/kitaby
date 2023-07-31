@@ -1,0 +1,37 @@
+// Import Style Files
+@use '../variables/colors' as *;
+
+@use '../helpers/mixins' as *;
+
+.category-page-card {
+    .card-body {
+        min-height: calc(100% - 63px);
+    }
+
+    .img-fluid.rounded-start {
+        height: 245px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-buttons-box {
+        padding-bottom: 1rem;
+        padding-right: 1rem;
+        gap: 30px;
+
+        a {
+            &.global-btn-box {
+                background-color: rgba(0%, 17%, 24%, 0.8);
+
+                &:hover {
+                    background-color: $main-color;
+                    color: $white;
+                }
+            }
+        }
+
+        .global-btn-box {
+            margin: 0;
+        }
+    }
+}

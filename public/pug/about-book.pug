@@ -1,0 +1,84 @@
+doctype html
+html(lang="ar" dir='rtl')
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(rel='icon', type='image/x-icon', href='/assets/images/favIcon.png')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    include includes/styles.pug
+    include includes/mixins.pug
+    title التصنيفات
+  body
+    .home-page-layout 
+      // Start main section 
+      +navbar('')
+
+      main
+        // Start Book Page Cover Section 
+        +bookCover('about')
+        // End Book Page Cover Section 
+
+        // Start About Book Section
+        section.members-section.about-book-section 
+          .small-container 
+            .members-content.about-book-content
+              .about-book-text-box
+                h2.about-book-subtitle نبذة
+                p إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع.
+            .members-content.about-book-content
+              .about-book-text-box
+                h2.about-book-subtitle الأنشطة
+              .members-subtitle-box.d-flex.align-items-center.justify-content-start.m-0.mt-3
+
+                h2.members-subtitle.m-0 المشرفون
+                p.members-title-dot.m-0 
+                p.members-number.m-0 1
+              .member-box.pb-3
+                .member-img-box 
+                  a(href="../profile.html")
+                    img(src="../assets/images/profilePhoto.webp", alt="member image")
+                .member-info 
+                  a.member-link(href="../profile.html")
+                    p عبد الرحمن 
+
+              .members-subtitle-box.d-flex.align-items-center.justify-content-start 
+                .members-img-box 
+                  img(src="../assets/images/members.png", alt="members")
+                p.members-subtitle.m-0 الأعضاء
+                p.members-title-dot.m-0 
+                p.members-number.m-0 13
+
+              .members-subtitle-box.d-flex.align-items-center.justify-content-start 
+                .members-img-box 
+                  img(src="../assets/images/history.png", alt="history")
+                p.members-subtitle.m-0 تاريخ الإنشاء
+                p.members-title-dot.m-0 
+                p.members-number.history-box.d-flex.m-0
+                  span منذ
+                  span 3
+                  span أسابيع
+
+        // End About Book Section 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    include includes/footer.pug
+
+
+    include includes/script.pug
+    
